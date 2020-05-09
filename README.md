@@ -4,11 +4,11 @@
 To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow.
 
 ### Programs used:
-Bash
-Java
-Nextflow - Bioinformatics workflow manager 
-SLURM - cluster management and job scheduling system
-Blast - Algorithm & program for comparing primary biological sequence information
+1. Bash
+2. Java
+3. Nextflow - Bioinformatics workflow manager 
+4. SLURM - cluster management and job scheduling system
+5. Blast - Algorithm & program for comparing primary biological sequence information
 
 ## Step1. Download all of the files in this respository.
 
