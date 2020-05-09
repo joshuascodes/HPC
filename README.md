@@ -33,3 +33,12 @@ Run on the command line: idev --partition=ficklin_class --account=ficklin_class 
 We will  combine the files in output_results.txt resulting in in 2 columns with the gene name and the amount of time the gene name occured with the command:   <p>
 cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
 
+#5. Request a node
+Request one core from the ficklin_class partition which will allow us to run commands on one of the head node.  <p>
+Run on the command line: idev --partition=ficklin_class --account=ficklin_class -t 12:00:00  
+  
+#6. Sort and combine files.
+We will combine the files in output_results.txt resulting in 2 columns with the gene name and the amount of time the gene name occured, sorted in decending order with the command:   <p>
+cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
+  
+ 
