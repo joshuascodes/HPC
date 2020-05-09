@@ -17,7 +17,7 @@ To complete this high-throughput computing task the user should be familiar with
 A Nextflow configuration file is a simple text file containing a set of parameters and directives. We will utilize the nextflow.config file to launch jobs on the executor (Slurm) so that we don't have to specify in our script. 
 
 ## 3. Bash run script
-This script (Job.srun) will start our project. It contains instructions for how we would like the job to be ran. The account, and partition will need to be changed to whatever the user has permission to. If you would like email updates on your job insert your email where mine is. If you do not want updates, you can remove both lines that have "mail". The remaining #SBATCH lines can remain as is. The last line tells Nextflow to run Step1.nf and use the -profile SLURM specified in the config file. This will run on the cluster for 5-14 hours.  
+This script (Job.srun) will start our project. It contains instructions for how we would like the job to be ran. The account, and partition will need to be changed to whatever the user has permission to. If you would like email updates on your job insert your email where mine is. If you do not want updates, you can remove both lines that have "mail". The remaining #SBATCH lines can remain as is. The last line tells Nextflow to run Step1.nf and use the -profile SLURM specified in the config file. This will run on the cluster for 5-14 hours.  <p>
 On the Command line run: sbatch Project.srun
 
 
