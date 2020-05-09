@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+#SBATCH --partition=ficklin_class
+#SBATCH --account=ficklin_class
+#SBATCH --job-name=Joshs_Job_blasp
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=joshua.freimark@wsu.edu
+#SBATCH --time=0-24:00:00
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=5
+#SBATCH --error=project_cmon.err
+#SBATCH --output=project_cmon.out
+
+
+module use /data/ficklin/modulefiles/
+module add nextflow
+module add blast
+module add java
+
+nextflow run Step1.nf -profile slurm
