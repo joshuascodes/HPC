@@ -26,8 +26,8 @@ This will run on the cluster for 5-14 hours.
 
 ## 4. Collect results
 Once the job is finished, locate the files returned and verify the results are what we expected.  Now run: <p> 
-find -name “output_results” <p>
-Find the channel. Run: find -name "match_ch.txt" <p>
+find -name “output_results” <p> <p>
+Find the channel. Run: <p> find -name "match_ch.txt" <p>
 Which should return something similar to: <p>
 ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt
 
