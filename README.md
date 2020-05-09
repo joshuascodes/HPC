@@ -1,5 +1,5 @@
 # Final Project
-### Agricultural and Food Systems 5050 Unit 3
+### Agricultural and Food Systems 505 Unit 3
 
 To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University.
 
