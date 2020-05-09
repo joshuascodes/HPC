@@ -3,7 +3,6 @@
 
 To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University.
 
-
 ### Programs used:
 1. Bash
 3. Groovy
@@ -33,3 +32,4 @@ Run on the command line: idev --partition=ficklin_class --account=ficklin_class 
 #6. Sort and combine files.
 We will  combine the files in output_results.txt resulting in in 2 columns with the gene name and the amount of time the gene name occured with the command:   <p>
 cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
+
