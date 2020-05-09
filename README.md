@@ -1,20 +1,27 @@
 # Final Project
 ### Agricultural and Food Systems 5050 Unit 3
 
-To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow.
+To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University.
 
 ### Programs used:
 1. Bash
+3. Groovy
 2. Java
 3. Nextflow - Bioinformatics workflow manager 
-4. SLURM - cluster management and job scheduling system
+4. SLURM - Cluster management and job scheduling system
 5. Blast - Algorithm & program for comparing primary biological sequence information
 
-## Step1. Download all of the files in this respository.
+## Step1. Download this Repository.
 
 ## Step 2. Nextflow config file
-A Nextflow configuration file is a simple text file containing a set of parameters and directives. We will utilize the nextflow.config file to launch jobs on the executor (Slurm) so that we don't have to specifiy in our script. 
+A Nextflow configuration file is a simple text file containing a set of parameters and directives. We will utilize the nextflow.config file to launch jobs on the executor (Slurm) so that we don't have to specify in our script. 
 
 ## Step 3. Bash run script
+This script (Job.srun) will start our project. It contains instructions for how we would like the job to be ran. The account, and partition will need to be changed to whatever the user has permission to. If you would like email updates on your job insert your email where mine is. If you do not want updates, you can remove both lines that have "mail". The remaining #SBATCH lines can remain as is. The last line tells Nextflow to run Step1.nf and use the -profile SLURM specified in the config file. This will run on the cluster for 5-14 hours
+## Collect results
+Once the job is finished, run -find name “output_results” to locate the files returned.
 
-This script will start our project. 
+# Request a node
+Run on the command line: idev --partition=ficklin_class --account=ficklin_class -t 12:00:00 
+Request one core from the ficklin_class partition which will allow us to run commands on one of the head node. We will  combine the files in output_results.txt with the command:
+cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
