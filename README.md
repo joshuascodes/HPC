@@ -8,7 +8,7 @@ To complete this high-throughput computing task the user should be familiar with
 3. Groovy
 2. Java
 3. Nextflow - Bioinformatics workflow manager 
-4. SLURM - cluster management and job scheduling system
+4. SLURM - Cluster management and job scheduling system
 5. Blast - Algorithm & program for comparing primary biological sequence information
 
 ## Step 1. Download this repository.
