@@ -41,3 +41,5 @@ Run: idev --partition=ficklin_class --account=ficklin_class -t 12:00:00
 We will  combine the files in output_results.txt resulting in 2 columns with the gene name and the amount of time the gene name occurred in descending order with the command:   <p>
 cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
 
+
+*.nextflow linguist-detectable=false
