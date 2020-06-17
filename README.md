@@ -1,6 +1,6 @@
 
 ### Overview
-To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University. Given a FASTA file containing 66,000 protein sequences, split it into multiple files that are no larger thean 5,000 sequences per file. Using Kamiak, execute the BLAST blastp program on all 10 files and the submission of the 10 files must be automated. Summarize the Blast results by generating a tab delimited summary file containing the results. The file should have only two columns, the first being the gene name, the second being the total number of alignments matches for that gene.
+To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University. Given a FASTA file containing 66,000 protein sequences, split it into multiple files that are no larger thean 5,000 sequences per file. Using Kamiak, execute the BLAST blastp program on all 10 files and the submission of the 10 files must be automated. Summarize the Blast results by generating a sorted tab-delimited summary file containing the results. The file should have only two columns, the first being the gene name, the second being the total number of alignments matches for that gene.
 
 ### Programs used:
 1. Git Bash/2.25.0
@@ -26,7 +26,7 @@ _This will run on the cluster for 5-14 hours._
 Once the job is finished, locate the files returned and verify the results are what we expected. 
 
 * Find the channel by executing: `find -name "match_ch.txt"` <p>
-Which should return something similar to: `./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt`
+  * Which should return something similar to: `./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt`
 
 * Find the reuslts files by executing: `find -name “output_results` <p>
 
@@ -34,7 +34,7 @@ Which should return something similar to: `./tmp/ad/398a13c0a16de70051026c1fda9d
 Request one core from the ficklin_class partition which will allow us to run commands on one of the head nodes.  <p>
 * Run: `idev --partition=ficklin_class --account=ficklin_class -t 12:00:00 ` 
   
-## 7. Sort and combine files.
+## 6. Sort and combine files.
 We will  combine the files in output_results.txt resulting in 2 columns with the gene name and the amount of times that the gene name occurred in descending order by executing the following chunk of code on the command-line:   <p>
 ```groovy
 cat ./tmp/ad/398a13c0a16de70051026c1fda9df9/match_ch.txt | perl -p -e 's/\.\d+\t/\t/g' | awk '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2"\t"$1}' > count_sort_genes.txt
