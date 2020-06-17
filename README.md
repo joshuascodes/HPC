@@ -9,7 +9,7 @@ To complete this high-throughput computing task the user should be familiar with
 4. Blast/2.9.0 - Algorithm & program for comparing primary biological sequence information
 5. SLURM - Cluster management and job scheduling system
 
-## Step 1. Download this repository.
+## 1. Download this repository.
 
 ## 2. Nextflow config file
 A Nextflow configuration file is a simple text file containing a set of parameters and directives. We will utilize the nextflow.config file to launch jobs on the executor (Slurm) so that we don't have to specify in our script. 
