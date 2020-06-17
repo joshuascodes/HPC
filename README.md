@@ -9,7 +9,9 @@ To complete this high-throughput computing task the user should be familiar with
 4. Blast/2.9.0 - Algorithm & program for comparing primary biological sequence information
 5. SLURM - Cluster management and job scheduling system
 
+
 ## 1. Download this repository.
+count_sort_genes.txt file is what your tab-delimited summary file should look like
 
 ## 2. Nextflow config file
 A Nextflow configuration file is a simple text file containing a set of parameters and directives. We will utilize the nextflow.config file to launch jobs on the executor (Slurm) so that we don't have to specify in our script. 
