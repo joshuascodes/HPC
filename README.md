@@ -1,7 +1,5 @@
-# Final Project
-### Agricultural and Food Systems 505 Unit 3
 
-## Overview
+### Overview
 To complete this high-throughput computing task the user should be familiar with the following: command-line, regular expressions, command-line data wrangling, Bash coding and Nextflow. We will use Kamiak which is a High-Performance Computing Cluster used at Washington State University. Given a FASTA file containing 66,000 protein sequences, split it into multiple files that are no larger thean 5,000 sequences per file. Using Kamiak, execute the BLAST blastp program on all 10 files and the submission of the 10 files must be automated. Summarize the Blast results by generating a tab delimited summary file containing the results. The file should have only two columns, the first being the gene name, the second being the total number of alignments matches for that gene.
 
 ### Programs used:
